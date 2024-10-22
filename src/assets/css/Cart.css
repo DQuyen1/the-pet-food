@@ -1,0 +1,65 @@
+.cart-page-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+    flex-direction: column;
+
+
+}
+
+.cart-page-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* border: 2px solid black; */
+    flex-basis: 50%;
+}
+
+
+.cart-page-summary > div {
+    flex-basis: 50%; /* Each child takes about half of the container */
+    margin-bottom: 10px;
+}
+
+
+.button-order  p {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.order-form {
+    background-color: #F5F5F9;
+    border: 1px solid #000000;
+    padding-bottom: 2rem;
+}
+.form-content {
+    border-bottom: 1px #000000 solid;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+ th, td {
+
+    padding: 12px 20px; 
+    text-align: left; 
+
+}
+
+
+th {
+    color: #6b6868;
+
+}
+
+.table-cart {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.header-table th {
+    border-bottom: 1px #000000 solid;
+
+}

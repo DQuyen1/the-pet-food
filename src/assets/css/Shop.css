@@ -1,0 +1,11 @@
+.category-item {
+    width: 500px;
+    background-color: transparent;
+}
+
+/* Make button look like a <p> tag */
+
+
+.category-item button:hover {
+    text-decoration: underline; /* Optional hover effect */
+}

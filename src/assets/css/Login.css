@@ -1,0 +1,69 @@
+/* Container for the login form */
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Increase the width */
+    width: 100%;
+    text-align: center;
+    margin: 0 auto; /* Center the form */
+  }
+  
+  /* General styling for the body */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-title {
+    margin-bottom: 20px;
+    font-size: 26px; /* Slightly larger title */
+    color: #333;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-field {
+    margin-bottom: 20px; /* Add more space between fields */
+  }
+  
+  .login-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+  }
+  
+  .login-input {
+    padding: 12px; /* Increase padding for larger input fields */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px; /* Slightly larger input text */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Style for the button */
+  .login-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 14px 20px; /* Increase button size */
+    font-size: 18px; /* Larger font size for the button */
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #45a049;
+  }
+  

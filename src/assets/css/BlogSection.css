@@ -1,0 +1,49 @@
+/*  
+.blog-section {
+    position: relative;
+    
+
+}
+
+.blog-image {
+    width: 15rem;
+    height: 15rem;    
+}
+
+
+.blog-text {
+    position: absolute;
+}  */
+
+.blog-content {
+    display: flex;
+    flex-wrap: wrap; /* Enables wrapping to new rows */
+    gap: 2rem; /* Adds spacing between items */
+    justify-content: space-between;
+    flex-basis: 33%;
+    
+    
+
+}
+
+.blog-section {
+    width: calc(33.33% - 2rem); /* Ensures 3 items per row */
+
+    position: relative;
+}
+
+.blog-image {
+    width: 15rem;
+    height: 15rem;
+    /* object-fit: cover; */
+}
+
+.blog-text {
+    position: absolute;
+    bottom: -3rem;
+    /* background: rgba(0, 0, 0, 0.5); Adds a semi-transparent background */
+    color: #070707;
+    /* padding: 0.5rem; */
+    width: 15rem;
+    text-align: start;
+}

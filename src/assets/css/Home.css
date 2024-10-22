@@ -1,0 +1,60 @@
+
+.home-contaniner {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;  
+    
+}
+
+.title-description {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.description {
+    margin-bottom: 1rem;
+}
+
+
+.triple-image {
+    width:425px;
+    height: 300px;
+    margin-bottom: 1rem;
+}
+
+.media-image {
+    width: 1300px;
+    height: 560px;
+    margin-bottom: 1rem;
+}
+
+.fullwidth-image {
+    width: 100vw;
+    height: 20rem;
+
+}
+
+.fullwidth-container {
+    width: 100vw;
+    position: relative;
+
+   
+}
+
+.body-content {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-center {
+    position: absolute;
+    top: 37%;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+}

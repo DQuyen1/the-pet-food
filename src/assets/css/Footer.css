@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse; /* Enable flexbox on the container */
+}
+
+.icon-column {
+    display: flex;
+    flex-direction: column; /* Aligns icon in a column */
+    justify-content: center; /* Centers icon vertically if needed */
+    height: 60px; /* Adjust this height as needed for two lines */
+}
+
+.text-column {
+    display: flex;
+    flex-direction: column; /* Stack spans in a column */
+    justify-content: center; /* Centers spans vertically */
+    margin-left: 10px;
+    background-color: #ffffff; /* Optional: Space between columns */
+}
+
+.footer {
+    background-color: #D9D9D9;
+
+}
+
+.address-content p {
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.policy-content p {
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
