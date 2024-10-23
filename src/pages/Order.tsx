@@ -1,5 +1,6 @@
 import { TextField } from "@mui/material";
 import { BsStarFill } from "react-icons/bs";
+import blankImage from "../assets/images/blank.jpg";
 
 export default function Order() {
   return (
@@ -12,7 +13,7 @@ export default function Order() {
           marginBottom: "1rem",
         }}
       >
-        <img src="src/assets/images/blank.jpg" alt="product-image" />
+        <img src={blankImage} alt="product-image" />
         <div
           style={{
             display: "flex",
@@ -37,14 +38,10 @@ export default function Order() {
           </div>
         </div>
       </div>
-      <img
-        src="src/assets/images/blank.jpg"
-        alt=""
-        style={{ width: "10%", height: "10%" }}
-      />
+      <img src={blankImage} alt="" style={{ width: "10%", height: "10%" }} />
 
       <img
-        src="src/assets/images/blank.jpg"
+        src={blankImage}
         alt=""
         style={{ width: "10%", height: "10%", marginLeft: "1rem" }}
       />
