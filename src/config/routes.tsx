@@ -3,12 +3,12 @@ import Blog from "../pages/Blog";
 import Cart from "../pages/Cart";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
-import Login from "../pages/Login";
+// import Login from "../pages/Login";
 import Menu from "../pages/Menu";
 //import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
 import Order from "../pages/Order";
-import Policy from "../pages/Policty";
+import Policy from "../pages/Policy";
 import Shop from "../pages/Shop";
 
 export const routes = [
@@ -61,10 +61,5 @@ export const routes = [
         element: <Order />,
       },
     ],
-  },
-
-  {
-    path: "/login",
-    element: <Login />,
   },
 ];

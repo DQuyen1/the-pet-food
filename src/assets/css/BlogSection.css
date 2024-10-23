@@ -18,18 +18,19 @@
 .blog-content {
     display: flex;
     flex-wrap: wrap; /* Enables wrapping to new rows */
-    gap: 2rem; /* Adds spacing between items */
+    gap: 3.5rem; /* Adds spacing between items */
     justify-content: space-between;
     flex-basis: 33%;
+  
     
     
 
 }
 
 .blog-section {
-    width: calc(33.33% - 2rem); /* Ensures 3 items per row */
-
+    width: calc(33.33% - 3.5rem); /* Ensures 3 items per row */
     position: relative;
+    margin-left: 2rem;
 }
 
 .blog-image {

@@ -1,10 +1,5 @@
 
-.home-contaniner {
-    display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center;  
-    
-}
+
 
 .title-description {
     display: flex;

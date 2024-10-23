@@ -2,6 +2,7 @@ import { BsInstagram } from "react-icons/bs";
 import { BiLogoFacebook, BiLogoYoutube, BiPhoneCall } from "react-icons/bi";
 import { CiMail } from "react-icons/ci";
 import "../assets/css/Footer.css";
+import logo from "../assets/images/logo.png";
 
 export default function Footer() {
   return (
@@ -18,14 +19,14 @@ export default function Footer() {
         }}
       >
         <div>
-          <p style={{ color: "#2C4DF4", fontSize: "1rem" }}>THE PET</p>
-          <p style={{ color: "#163AEE", fontWeight: "bold" }}>FOOD</p>
+          <img src={logo} alt="" />
+          {/* <p style={{ color: "#163AEE", fontWeight: "bold" }}>FOOD</p> */}
         </div>
         <div className="container">
           <div className="icon-column">
             <BiPhoneCall
               style={{
-                backgroundColor: "#0066FF",
+                backgroundColor: "#FA4B2F",
                 color: "white",
                 fontSize: 40,
                 borderRadius: "5%",
@@ -43,7 +44,7 @@ export default function Footer() {
           <div className="icon-column">
             <CiMail
               style={{
-                backgroundColor: "#0066FF",
+                backgroundColor: "#FA4B2F",
                 color: "white",
                 fontSize: 40,
                 borderRadius: "5%",
@@ -75,7 +76,7 @@ export default function Footer() {
           <p
             style={{
               fontWeight: "bold",
-              color: "#357CFF",
+              color: "#F07561",
               marginBottom: "2rem",
             }}
           >
@@ -94,7 +95,7 @@ export default function Footer() {
           <p
             style={{
               fontWeight: "bold",
-              color: "#357CFF",
+              color: "#F07561",
               marginBottom: "2rem",
             }}
           >
