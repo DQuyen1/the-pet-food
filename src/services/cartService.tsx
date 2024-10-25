@@ -1,6 +1,6 @@
 export default class CartService {
   async getCartByUserId(userId) {
-    const url = `http://13.215.159.74/api/Cart/${userId}`;
+    const url = `https://13.215.159.74/api/Cart/${userId}`;
 
     try {
       const response = await fetch(url, {
@@ -24,7 +24,7 @@ export default class CartService {
   }
 
   async createCart(userId: number) {
-    const url = "http://13.215.159.74/api/Cart";
+    const url = "https://13.215.159.74/api/Cart";
 
     try {
       const response = await fetch(url, {

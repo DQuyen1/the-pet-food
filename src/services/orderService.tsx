@@ -1,6 +1,6 @@
 export default class OrderService {
   async createOrder(userId, total) {
-    const url = "http://13.215.159.74/api/Order";
+    const url = "https://13.215.159.74/api/Order";
 
     try {
       const response = await fetch(url, {

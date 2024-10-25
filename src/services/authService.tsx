@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default class AuthService {
   async login(userName, password) {
-    const url = "http://13.215.159.74/api/User/login";
+    const url = "https://13.215.159.74/api/User/login";
 
     try {
       const response = await fetch(url, {
@@ -28,7 +28,7 @@ export default class AuthService {
   }
 
   async signUp(userName, email, password, fullName, address, phone) {
-    const url = "http://13.215.159.74/api/User";
+    const url = "https://13.215.159.74/api/User";
 
     try {
       const response = await axios.post(url, {

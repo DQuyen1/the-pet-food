@@ -1,6 +1,6 @@
 export default class CategoryService {
   async fetchCategory() {
-    const url = "http://13.215.159.74/api/Category";
+    const url = "https://13.215.159.74/api/Category";
 
     try {
       const response = await fetch(url, {

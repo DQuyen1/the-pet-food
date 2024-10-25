@@ -1,6 +1,6 @@
 export default class CartItemService {
   async createCartItem(cartId: number, productId: number, quantity: number) {
-    const url = "http://13.215.159.74/api/CartItem";
+    const url = "https://13.215.159.74/api/CartItem";
 
     try {
       const response = await fetch(url, {
@@ -28,7 +28,7 @@ export default class CartItemService {
   }
 
   async updateCartItem(cartId: number, quantity: number) {
-    const url = `http://13.215.159.74/api/CartItem/${cartId}`;
+    const url = `https://13.215.159.74/api/CartItem/${cartId}`;
 
     try {
       const response = await fetch(url, {

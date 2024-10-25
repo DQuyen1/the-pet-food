@@ -1,6 +1,6 @@
 export default class UserService {
   async fetchUserById(id: string) {
-    const url = `http://13.215.159.74/api/User/${id}`;
+    const url = `https://13.215.159.74/api/User/${id}`;
 
     try {
       const response = await fetch(url, {
