@@ -1,31 +1,32 @@
 import BlogSection from "../components/BlogSection";
 import "../assets/css/BlogSection.css";
 import blankImage from "../assets/images/blank.jpg";
+import dog1 from "../assets/images/thuoc-tam-giup-tri-cac-loai-ve-cho.jpg";
+import cat1 from "../assets/images/Scottish-fold-cat.webp";
+import dog2 from "../assets/images/Golden-Retriever.jpg";
+import cat2 from "../assets/images/images.jpg";
+import dog3 from "../assets/images/dog_hyperventilating_2_1024x1024.webp";
+import cat3 from "../assets/images/image-79322-800.jpg";
 
 export default function Blog() {
   const blogData = [
     {
-      src: blankImage,
+      src: dog1,
       content: "Cách trị ve chó tại nhà từ thiên nhiên hiệu quả cao",
     },
     {
-      src: blankImage,
-      content:
-        "Chăm sóc mèo bị tiêu chảy: Lời khuyên hàng đầu từ các chuyên gia",
-    },
-    {
-      src: blankImage,
+      src: cat1,
       content: "Chó bị vim da nên và không nên ăn gì? Hướng dẫn Sen chi tiết",
     },
-    { src: blankImage, content: "Sự Thật Ngỡ Ngàng Lý Do Mèo Ít Uống Nước" },
-    { src: blankImage, content: "Sự Thật Ngỡ Ngàng Lý Do Mèo Ít Uống Nước" },
+    { src: dog2, content: "Sự Thật Ngỡ Ngàng Lý Do Mèo Ít Uống Nước" },
+    { src: cat3, content: "Sự Thật Ngỡ Ngàng Lý Do Mèo Ít Uống Nước" },
     {
-      src: blankImage,
+      src: cat2,
       content:
         "Chó bị chảy nước miếng có tự hết không? Làm sao ngăn ngừa tình trạng này",
     },
     {
-      src: blankImage,
+      src: dog3,
       content:
         "Chăm sóc mèo bị tiêu chảy: Lời khuyên hàng đầu từ các chuyên gia",
     },

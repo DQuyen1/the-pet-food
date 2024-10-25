@@ -1,34 +1,12 @@
-/*  
-.blog-section {
-    position: relative;
-    
-
-}
-
-.blog-image {
-    width: 15rem;
-    height: 15rem;    
-}
-
-
-.blog-text {
-    position: absolute;
-}  */
-
 .blog-content {
     display: flex;
     flex-wrap: wrap; /* Enables wrapping to new rows */
-    gap: 3.5rem; /* Adds spacing between items */
-    justify-content: space-between;
-    flex-basis: 33%;
-  
-    
-    
-
+    gap: 5rem 0rem; /* Adds spacing between items */
+    justify-content: space-evenly;
 }
 
 .blog-section {
-    width: calc(33.33% - 3.5rem); /* Ensures 3 items per row */
+    width: calc(33.33% - 3rem); /* Ensures 3 items per row */
     position: relative;
     margin-left: 2rem;
 }

@@ -2,9 +2,26 @@ import { CiSearch } from "react-icons/ci";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiCart } from "react-icons/bi";
 import "../assets/css/NavBar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function NavBar() {
+  const navigate = useNavigate();
+  const [userId, setUserId] = useState(null);
+
+  useEffect(() => {
+    const storedUserId = localStorage.getItem("userId");
+    setUserId(storedUserId);
+  });
+
+  const goToCart = () => {
+    navigate("/cart");
+  };
+
+  const goToProfile = () => {
+    navigate("/profile");
+  };
+
   return (
     <div
       className="navbar"
@@ -29,20 +46,23 @@ export default function NavBar() {
           flexGrow: 8,
         }}
       >
-        <NavLink to="/" style={{ textDecoration: "none" }}>
+        <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
           {" "}
           GIỚI THIỆU
         </NavLink>
-        <NavLink to="/shop" style={{ textDecoration: "none" }}>
+        <NavLink to="/shop" style={{ textDecoration: "none", color: "black" }}>
           SHOP
         </NavLink>
-        <NavLink to="/menu" style={{ textDecoration: "none" }}>
+        <NavLink to="/menu" style={{ textDecoration: "none", color: "black" }}>
           MENU THỨC ĂN
         </NavLink>
-        <NavLink to="/blog" style={{ textDecoration: "none" }}>
+        <NavLink to="/blog" style={{ textDecoration: "none", color: "black" }}>
           BLOG
         </NavLink>
-        <NavLink to="/contact" style={{ textDecoration: "none" }}>
+        <NavLink
+          to="/contact"
+          style={{ textDecoration: "none", color: "black" }}
+        >
           LIÊN HỆ
         </NavLink>
       </div>
@@ -57,8 +77,32 @@ export default function NavBar() {
         }}
       >
         <CiSearch className="search-icon" />
-        <AiOutlineUser className="user-icon" />
-        <BiCart className="cart-icon" />
+        {userId ? (
+          <AiOutlineUser
+            className="user-icon"
+            onClick={() => goToProfile()}
+            style={{ cursor: "pointer" }}
+          />
+        ) : (
+          <span
+            style={{
+              cursor: "pointer",
+              alignContent: "center",
+              fontWeight: "bold",
+              fontSize: "18px",
+            }}
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Login
+          </span>
+        )}
+        <BiCart
+          className="cart-icon"
+          onClick={() => goToCart()}
+          style={{ cursor: "pointer" }}
+        />
       </div>
     </div>
   );

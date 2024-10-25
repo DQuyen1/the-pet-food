@@ -1,16 +1,29 @@
 import "../assets/css/ProductItem.css";
 import { BsStarFill } from "react-icons/bs";
-import blankImage from "../assets/images/blank.jpg";
 
-export default function ProductItem() {
+export default function ProductItem({ name, price, image }) {
+  function randomRating() {
+    const rating = (Math.random() * 2 + 3).toFixed(0);
+    return parseInt(rating);
+  }
+
+  function randomSold() {
+    const sold = (Math.random() * 2 + 4).toFixed(1);
+    return sold;
+  }
+
+  const rating = randomRating();
+
   return (
     <div>
-      <img src={blankImage} alt="" className="product-image" />
-      <p>Product name</p>
-      <p>Price</p>
-      <BsStarFill color="yellow" />
-      <BsStarFill color="yellow" />
-      <span>(đã bán 7k+)</span>
+      <img src={image} alt="" className="product-image" />
+      <p>{name}</p>
+      <p style={{ fontWeight: "bold" }}>{price} đ</p>
+      {Array.from({ length: rating }).map((_, index) => (
+        <BsStarFill key={index} color="yellow" />
+      ))}
+
+      <span>(đã bán {randomSold()}k+)</span>
     </div>
   );
 }

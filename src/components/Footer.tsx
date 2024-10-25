@@ -30,7 +30,7 @@ export default function Footer() {
                 color: "white",
                 fontSize: 40,
                 borderRadius: "5%",
-                padding: "5px",
+                padding: "10px 10px",
               }}
             />
           </div>
@@ -48,7 +48,7 @@ export default function Footer() {
                 color: "white",
                 fontSize: 40,
                 borderRadius: "5%",
-                padding: "5px",
+                padding: "10px 10px",
               }}
             />
           </div>

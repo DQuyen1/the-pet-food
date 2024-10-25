@@ -16,7 +16,11 @@
     display: flex;
     flex-direction: column; /* Stack spans in a column */
     justify-content: center; /* Centers spans vertically */
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    /* border-radius: 5px; */
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-right: 10px;
     background-color: #ffffff; /* Optional: Space between columns */
 }
 

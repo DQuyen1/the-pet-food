@@ -1,5 +1,10 @@
 import "../assets/css/Home.css";
 import blankImage from "../assets/images/blank.jpg";
+import company from "../assets/images/company.jpg";
+import how from "../assets/images/1.jpg";
+import what from "../assets/images/Web_150DPI-20190307-WeWork-Tabor-Center-Dogs-of-WeWork_Twitter.jpg";
+import dog from "../assets/images/image (4).png";
+import cat from "../assets/images/image (6).png";
 
 export default function Home() {
   return (
@@ -22,7 +27,11 @@ export default function Home() {
       </div>
 
       <div className="body-content">
-        <img src={blankImage} alt="image" className="media-image" />
+        <img
+          src="https://res.cloudinary.com/dchov8fes/image/upload/v1729850518/dfqm37bznk2wwchd8fjk.png"
+          alt="image"
+          className="media-image"
+        />
         <p className="description">
           Menu đa dạng trên 20 loại sản phẩm Pate tươi và thực phẩm bổ sung cho
           Chó Mèo, Là một công ty mới trong lĩnh vực sản xuất thức ăn chó mèo,
@@ -34,24 +43,24 @@ export default function Home() {
           thịt, cá, bao bì chuyên nghiệp, dịch vụ giao hàng, hậu mãi tốt và hệ
           thống phân phối rộng khắp tại các hệ thống thú y, <br /> petshop lớn.
         </p>
-        <img src={blankImage} alt="image" className="media-image" /> <br />
-        <img src={blankImage} alt="image" className="media-image" />
+        <img src={dog} alt="image" className="media-image" /> <br />
+        <img src={cat} alt="image" className="media-image" />
         <br />
         <div>
           <img
-            src={blankImage}
+            src={company}
             alt="image"
             style={{ marginRight: "12px" }}
             className="triple-image"
           />
           <img
-            src={blankImage}
+            src={how}
             alt="image"
             style={{ marginRight: "12px" }}
             className="triple-image"
           />
           <img
-            src={blankImage}
+            src={what}
             alt="image"
             style={{ marginRight: "12px" }}
             className="triple-image"

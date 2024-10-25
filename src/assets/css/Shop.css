@@ -6,6 +6,29 @@
 /* Make button look like a <p> tag */
 
 
-.category-item button:hover {
-    text-decoration: underline; /* Optional hover effect */
+/* .category-item button:hover {
+    text-decoration: underline; Optional hover effect
+} */
+
+
+.p-button:hover {
+    color: #000;
+    background-color: rgb(201, 204, 204);
 }
+
+
+.p-button {
+    all: unset;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+    width: 100%;
+    cursor: pointer; /* Add cursor to indicate it's clickable */
+    color: black;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  }
+
+  .product-button {
+    all: unset;
+    cursor: pointer;
+  }

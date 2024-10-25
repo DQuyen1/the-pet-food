@@ -15,6 +15,7 @@
     flex-wrap: wrap;
     /* border: 2px solid black; */
     flex-basis: 50%;
+    border-collapse: collapse;
 }
 
 
