@@ -1,6 +1,5 @@
 import BlogSection from "../components/BlogSection";
 import "../assets/css/BlogSection.css";
-import blankImage from "../assets/images/blank.jpg";
 import dog1 from "../assets/images/thuoc-tam-giup-tri-cac-loai-ve-cho.jpg";
 import cat1 from "../assets/images/Scottish-fold-cat.webp";
 import dog2 from "../assets/images/Golden-Retriever.jpg";

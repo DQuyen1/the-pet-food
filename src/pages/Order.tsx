@@ -4,7 +4,7 @@ import blankImage from "../assets/images/blank.jpg";
 import { useParams } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import ProductService from "../services/productService";
-import CartItemService from "../services/cartItemService";
+
 import { toast } from "react-toastify";
 import { useCart } from "../context/cartContext";
 
@@ -13,7 +13,7 @@ export default function Order() {
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const product_service = new ProductService();
-  const cart_item_service = new CartItemService();
+
   const { addItemToCart } = useCart();
 
   function handleQuantityChange(action) {

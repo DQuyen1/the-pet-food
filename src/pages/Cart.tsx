@@ -38,6 +38,7 @@ export default function Cart() {
       setEmail(response.email || "");
       setAddress(response.address || "");
     }
+    console.log(currentUser);
   }
 
   async function createOrder() {

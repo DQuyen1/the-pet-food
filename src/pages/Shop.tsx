@@ -58,6 +58,7 @@ export default function Shop() {
   function allCategory() {
     setCurrentCategory("Tất cả");
     fetchProduct();
+    console.log(currentUser);
   }
 
   useEffect(() => {
