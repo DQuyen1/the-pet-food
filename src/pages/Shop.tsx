@@ -187,7 +187,7 @@ export default function Shop() {
                 <ProductItem
                   name={product.productName}
                   price={product.price}
-                  image={product.imageUrl || pet5}
+                  image={product.imgUrl || pet5}
                 />
               </button>
             ))

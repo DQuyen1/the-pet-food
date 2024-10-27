@@ -7,6 +7,8 @@ import ProductService from "../services/productService";
 
 import { toast } from "react-toastify";
 import { useCart } from "../context/cartContext";
+import CommentSection from "../components/CommentSection";
+import defaultImg from "../assets/images/default.jpg";
 
 export default function Order() {
   const { id } = useParams();
@@ -15,6 +17,34 @@ export default function Order() {
   const product_service = new ProductService();
 
   const { addItemToCart } = useCart();
+
+  const defaultComment = [
+    {
+      userName: "John Doe",
+      comment: "Great product!",
+      date: "2022-01-01",
+      avatar: defaultImg,
+    },
+    {
+      userName: "Jane Smith",
+      comment: "I'm enjoying using this product!",
+      date: "2022-02-01",
+      avatar: defaultImg,
+    },
+    {
+      userName: "Bob Johnson",
+      comment: "I'm really enjoying this product!",
+      date: "2022-03-01",
+      avatar: defaultImg,
+    },
+  ];
+
+  const [comments, setComments] = useState(defaultComment);
+  const [userComment, setUserComment] = useState("");
+
+  function addNewComment(newComment) {
+    setComments((prevComment) => [...prevComment, newComment]);
+  }
 
   function handleQuantityChange(action) {
     if (action === "plus") {
@@ -96,7 +126,11 @@ export default function Order() {
           width: "90%",
         }}
       >
-        <img src={blankImage} alt="product-image" />
+        <img
+          src={product?.imgUrl || blankImage}
+          alt="product-image"
+          style={{ width: "600px", height: "400px" }}
+        />
         <div
           style={{
             display: "flex",
@@ -154,7 +188,6 @@ export default function Order() {
               >
                 {quantity}
               </span>{" "}
-              {/* Quantity */}
               <button
                 style={{
                   width: "30px",
@@ -218,6 +251,7 @@ export default function Order() {
           borderColor: "#D9D9D9",
           padding: "0.5rem 0.5rem",
           marginTop: "1rem",
+          marginBottom: "1rem",
         }}
       >
         <p style={{ fontSize: "1.5rem", marginLeft: "0.5rem" }}>4.00</p>
@@ -226,7 +260,19 @@ export default function Order() {
           <BsStarFill color="yellow" />
         </div>
       </div>
-      <div style={{ marginTop: "1rem" }}>
+
+      <div
+        style={{
+          border: "1px solid #D9D9D9",
+          padding: "0.5rem 0.5rem",
+          borderRadius: "5px",
+          width: "760px",
+        }}
+      >
+        <CommentSection comments={comments} />
+      </div>
+
+      <div style={{ marginTop: "1rem", marginBottom: "1rem" }}>
         <TextField
           id="full-name"
           variant="outlined"
@@ -240,6 +286,9 @@ export default function Order() {
               borderBottomRightRadius: "0px",
             },
           }}
+          className="comment-input"
+          onChange={(e) => setUserComment(e.target.value)}
+          value={userComment}
         />
         <div
           style={{
@@ -271,7 +320,7 @@ export default function Order() {
             }}
           />
           <TextField
-            placeholder="Email"
+            placeholder="Email (Optional)"
             sx={{
               height: "30px",
               "& .MuiInputBase-root": {
@@ -290,6 +339,7 @@ export default function Order() {
               borderRadius: "5px",
               border: "none",
             }}
+            onClick={addNewComment}
           >
             POST A COMMENT
           </button>

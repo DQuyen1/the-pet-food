@@ -10,6 +10,7 @@ import Order from "../pages/Order";
 import Policy from "../pages/Policy";
 import Profile from "../pages/Profile";
 import Shop from "../pages/Shop";
+import Signup from "../pages/SignUp";
 // import Signup from "../pages/SignUp";
 
 export const routes = [
@@ -72,8 +73,8 @@ export const routes = [
     element: <Login />,
   },
 
-  // {
-  //   path: "/signup",
-  //   element: <Signup />,
-  // },
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
 ];
