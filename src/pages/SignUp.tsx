@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "../assets/css/Signup.css";
+
 import AuthService from "../services/authService";
+import "../assets/css/SignUp.css";
 
 type ErrorType = {
   username?: string;
