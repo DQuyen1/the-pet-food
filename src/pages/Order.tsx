@@ -7,8 +7,8 @@ import ProductService from "../services/productService";
 
 import { toast } from "react-toastify";
 import { useCart } from "../context/cartContext";
-import CommentSection from "../components/CommentSection";
-import defaultImg from "../assets/images/default.jpg";
+// import CommentSection from "../components/CommentSection";
+// import defaultImg from "../assets/images/default.jpg";
 
 export default function Order() {
   const { id } = useParams();
@@ -18,33 +18,33 @@ export default function Order() {
 
   const { addItemToCart } = useCart();
 
-  const defaultComment = [
-    {
-      userName: "John Doe",
-      comment: "Great product!",
-      date: "2022-01-01",
-      avatar: defaultImg,
-    },
-    {
-      userName: "Jane Smith",
-      comment: "I'm enjoying using this product!",
-      date: "2022-02-01",
-      avatar: defaultImg,
-    },
-    {
-      userName: "Bob Johnson",
-      comment: "I'm really enjoying this product!",
-      date: "2022-03-01",
-      avatar: defaultImg,
-    },
-  ];
+  // const defaultComment = [
+  //   {
+  //     userName: "John Doe",
+  //     comment: "Great product!",
+  //     date: "2022-01-01",
+  //     avatar: defaultImg,
+  //   },
+  //   {
+  //     userName: "Jane Smith",
+  //     comment: "I'm enjoying using this product!",
+  //     date: "2022-02-01",
+  //     avatar: defaultImg,
+  //   },
+  //   {
+  //     userName: "Bob Johnson",
+  //     comment: "I'm really enjoying this product!",
+  //     date: "2022-03-01",
+  //     avatar: defaultImg,
+  //   },
+  // ];
 
-  const [comments, setComments] = useState(defaultComment);
-  const [userComment, setUserComment] = useState("");
+  // const [comments, setComments] = useState(defaultComment);
+  // const [userComment, setUserComment] = useState("");
 
-  function addNewComment(newComment) {
-    setComments((prevComment) => [...prevComment, newComment]);
-  }
+  // function addNewComment(newComment) {
+  //   setComments((prevComment) => [...prevComment, newComment]);
+  // }
 
   function handleQuantityChange(action) {
     if (action === "plus") {
@@ -261,7 +261,7 @@ export default function Order() {
         </div>
       </div>
 
-      <div
+      {/* <div
         style={{
           border: "1px solid #D9D9D9",
           padding: "0.5rem 0.5rem",
@@ -270,7 +270,7 @@ export default function Order() {
         }}
       >
         <CommentSection comments={comments} />
-      </div>
+      </div> */}
 
       <div style={{ marginTop: "1rem", marginBottom: "1rem" }}>
         <TextField
@@ -287,8 +287,8 @@ export default function Order() {
             },
           }}
           className="comment-input"
-          onChange={(e) => setUserComment(e.target.value)}
-          value={userComment}
+          // onChange={(e) => setUserComment(e.target.value)}
+          // value={userComment}
         />
         <div
           style={{
@@ -339,7 +339,7 @@ export default function Order() {
               borderRadius: "5px",
               border: "none",
             }}
-            onClick={addNewComment}
+            // onClick={addNewComment}
           >
             POST A COMMENT
           </button>
