@@ -3,8 +3,9 @@
     display: flex;
     justify-content: center; /* Horizontal centering */
     align-items: center;    /* Vertical centering */
-    min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
+    /* min-height: calc(100vh - 100px);  */
+    height: auto;      
      /* padding: 20px;  */
-     margin-top: 3rem;
+    margin-top: 2rem;
     box-sizing: border-box;
 }

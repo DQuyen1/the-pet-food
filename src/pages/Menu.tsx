@@ -3,6 +3,11 @@ import blankImage from "../assets/images/blank.jpg";
 import ProductService from "../services/productService";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import "../assets/css/Menu.css";
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import { Button, TextField } from "@mui/material";
+import userImage from "../assets/images/default.jpg";
 
 export default function Menu() {
   const [products, setProducts] = useState([]);
@@ -24,6 +29,12 @@ export default function Menu() {
   useEffect(() => {
     fetchProduct();
   }, []);
+
+  // const style = {
+  //   color: "white",
+  //   backgroundColor: "black",
+  //   borderRadius: "20%",
+  // };
 
   return (
     <div
@@ -82,6 +93,172 @@ export default function Menu() {
         ) : (
           <p>Loading products...</p>
         )}
+      </div>
+      <div
+        style={{
+          borderBottom: "1px solid black",
+          width: "50%",
+          borderTop: "1px solid black",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "1rem 0rem",
+        }}
+      >
+        <BsFillArrowLeftCircleFill fontSize={30} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <p>Hướng dẫn chi tiết cách sử dụng</p>
+          <p>các sản phẩm tại Thepetfood Vietnam</p>
+        </div>
+        <BsFillArrowRightCircleFill fontSize={30} />
+      </div>
+      <div>
+        <p
+          style={{
+            fontWeight: "bold",
+            fontSize: "20px",
+            margin: "1rem 0rem",
+          }}
+        >
+          3 THOUGHTS ON “ MENU THỨC ĂN THE PET FOOD VIETNAM
+        </p>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            marginLeft: "-10rem",
+            gap: "1rem",
+          }}
+        >
+          <p>
+            <span style={{ fontWeight: "bold" }}>Pingback</span>: Bí Quyết Chọn
+            Thức Ăn cho Chó Mèo Giúp Thú cưng Tăng Cân{" "}
+          </p>
+          <p>
+            <span style={{ fontWeight: "bold" }}>Pingback:</span> THỨC ĂN CHO
+            CHÓ NÀO LÀ TỐT NHẤT ? - DC KING
+          </p>
+          <p>
+            <span style={{ fontWeight: "bold" }}>Pingback</span>: 5 Cách làm
+            Pate cho Chó{" "}
+          </p>
+        </div>
+      </div>
+      <div
+        style={{
+          // marginLeft: "-10rem",
+          borderTop: "1px solid black",
+          marginTop: "1rem",
+          width: "920px",
+          // width: "100%",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            marginTop: "1rem",
+          }}
+        >
+          <img
+            src={userImage}
+            alt="image"
+            style={{
+              width: "50px",
+              height: "50px",
+              borderRadius: "50%",
+            }}
+          />
+          <p style={{ fontWeight: "bold", marginLeft: "1rem" }}>MÍT</p>
+        </div>
+        <hr style={{ color: "black" }} />
+        <div style={{ marginTop: "1rem" }}>
+          <span style={{ fontWeight: "bold" }}>Leave a reply</span> <br />
+          <span>
+            Your email address will not be published. Required fields are marked
+            *
+          </span>
+          <br />
+        </div>
+        <label
+          htmlFor="comment"
+          style={{ fontWeight: "bold", marginBottom: "1rem" }}
+        >
+          Comment*
+        </label>
+        <br />
+        <TextField
+          id="full-name"
+          variant="outlined"
+          hiddenLabel
+          fullWidth
+          sx={{
+            height: 100,
+            "& .MuiOutlinedInput-root": { height: "100%" },
+          }}
+        />
+        <div style={{ marginTop: "1rem" }}>
+          <div style={{ display: "flex" }}>
+            <label
+              htmlFor="name"
+              style={{ fontWeight: "bold", textAlign: "left" }}
+            >
+              Name
+            </label>
+            <label
+              htmlFor="email"
+              style={{
+                fontWeight: "bold",
+                textAlign: "left",
+                marginLeft: "14.3rem",
+              }}
+            >
+              Email
+            </label>
+            <label
+              htmlFor="website"
+              style={{
+                fontWeight: "bold",
+                textAlign: "left",
+                marginLeft: "14.3rem",
+              }}
+            >
+              Website
+            </label>
+          </div>
+          <div style={{ display: "flex" }}>
+            <TextField id="" variant="outlined" hiddenLabel />
+            <TextField
+              id=""
+              variant="outlined"
+              hiddenLabel
+              sx={{ marginLeft: "3rem" }}
+            />
+            <TextField
+              id=""
+              variant="outlined"
+              hiddenLabel
+              sx={{ marginLeft: "3rem" }}
+            />
+          </div>
+        </div>
+        <Button
+          variant="contained"
+          sx={{
+            marginTop: "1rem",
+            backgroundColor: "#1978E0",
+            marginBottom: "1rem",
+          }}
+        >
+          POST A COMMENT
+        </Button>
       </div>
     </div>
   );

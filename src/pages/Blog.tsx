@@ -15,9 +15,13 @@ export default function Blog() {
     },
     {
       src: cat1,
-      content: "Chó bị vim da nên và không nên ăn gì? Hướng dẫn Sen chi tiết",
+      content:
+        "Chăm sóc mèo bị tiêu chảy: Lời khuyên hàng đầu từ các chuyên gia",
     },
-    { src: dog2, content: "Sự Thật Ngỡ Ngàng Lý Do Mèo Ít Uống Nước" },
+    {
+      src: dog2,
+      content: "Chó bị viêm da nên và không nên ăn gì? Hướng dẫn Sen chi tiết",
+    },
     { src: cat3, content: "Sự Thật Ngỡ Ngàng Lý Do Mèo Ít Uống Nước" },
     {
       src: cat2,

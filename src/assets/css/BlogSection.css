@@ -3,6 +3,8 @@
     flex-wrap: wrap; /* Enables wrapping to new rows */
     gap: 5rem 0rem; /* Adds spacing between items */
     justify-content: space-evenly;
+    width: 40%;
+    margin-bottom: 5rem;
 }
 
 .blog-section {
@@ -19,7 +21,7 @@
 
 .blog-text {
     position: absolute;
-    bottom: -3rem;
+    bottom: -3.35rem;
     /* background: rgba(0, 0, 0, 0.5); Adds a semi-transparent background */
     color: #070707;
     /* padding: 0.5rem; */

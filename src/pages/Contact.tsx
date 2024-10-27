@@ -1,9 +1,9 @@
 import { Button, TextField } from "@mui/material";
-import userImage from "../assets/images/user.png";
+import userImage from "../assets/images/default.jpg";
 
 export default function Contact() {
   return (
-    <div className="contact-page-content" style={{ top: "20%" }}>
+    <div className="contact-page-content" style={{}}>
       <p style={{ textAlign: "center" }}>CHI NHÁNH MỚI</p>
       <h2 style={{ textAlign: "center" }}>
         Hệ thống phân phối pate tươi cho chó mèo
@@ -23,18 +23,18 @@ export default function Contact() {
       </p>
       <hr />
 
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div style={{ display: "flex", alignItems: "flex-start" }}>
         <img
           src={userImage}
           alt="image"
           style={{
-            width: "100px",
-            height: "100px",
-            borderRadius: "100px",
+            width: "50px",
+            height: "50px",
+            borderRadius: "50%",
             borderColor: "yellow",
           }}
         />
-        <p style={{ fontWeight: "bold" }}>MÍT</p>
+        <p style={{ fontWeight: "bold", marginLeft: "1rem" }}>MÍT</p>
       </div>
       <hr />
       <div style={{ marginTop: "1rem" }}>
@@ -44,7 +44,10 @@ export default function Contact() {
         </span>
         <br />
       </div>
-      <label htmlFor="comment" style={{ fontWeight: "bold" }}>
+      <label
+        htmlFor="comment"
+        style={{ fontWeight: "bold", marginBottom: "1rem" }}
+      >
         Comment*
       </label>
       <br />
@@ -105,7 +108,11 @@ export default function Contact() {
       </div>
       <Button
         variant="contained"
-        sx={{ marginTop: "1rem", backgroundColor: "#1978E0" }}
+        sx={{
+          marginTop: "1rem",
+          backgroundColor: "#1978E0",
+          marginBottom: "1rem",
+        }}
       >
         POST A COMMENT
       </Button>

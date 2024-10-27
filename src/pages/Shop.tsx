@@ -84,7 +84,7 @@ export default function Shop() {
       <p style={{ marginLeft: "20px", marginBottom: "20px" }}>
         SHOP/{currentCategory}
       </p>
-      <div style={{ display: "flex", flexDirection: "row", height: "100vh" }}>
+      <div style={{ display: "flex", flexDirection: "row", height: "60vh" }}>
         <div
           style={{
             flex: "none",

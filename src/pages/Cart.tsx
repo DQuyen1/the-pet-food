@@ -197,7 +197,7 @@ export default function Cart() {
 
             {/* Email and Province/City */}
             <Grid item xs={12} md={6}>
-              <label htmlFor="email-address">Email Address (optional)</label>
+              <label htmlFor="email-address">Email Address </label>
               <TextField
                 id="email-address"
                 variant="outlined"
@@ -206,17 +206,17 @@ export default function Cart() {
               />
             </Grid>
             <Grid item xs={12} md={6}>
-              <label htmlFor="province/city">Province/City</label>
+              <label htmlFor="province/city">Province/City (Optinal)</label>
               <TextField id="province/city" variant="outlined" fullWidth />
             </Grid>
 
             {/* District and Commune/Ward */}
             <Grid item xs={12} md={6}>
-              <label htmlFor="district">District</label>
+              <label htmlFor="district">District (Optional)</label>
               <TextField id="district" variant="outlined" fullWidth />
             </Grid>
             <Grid item xs={12} md={6}>
-              <label htmlFor="commune">Commune/Ward/Town</label>
+              <label htmlFor="commune">Commune/Ward/Town (Optional)</label>
               <TextField id="commune" variant="outlined" fullWidth />
             </Grid>
 

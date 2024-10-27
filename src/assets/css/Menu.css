@@ -1,0 +1,9 @@
+.icon-style {
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 24px; /* Icon size */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  

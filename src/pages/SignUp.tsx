@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import AuthService from "../services/authService";
 import "../assets/css/SignUp.css";
+import { toast } from "react-toastify";
 
 type ErrorType = {
   username?: string;
@@ -122,14 +123,43 @@ export default function Signup() {
       password,
     });
 
-    auth_service.signUp(
+    const isValid = auth_service.signUp(
       username,
       email,
       password,
       fullname,
       address,
-      Number(phone)
+      phone
     );
+
+    if (isValid) {
+      toast.success("Signup successful!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      setUsername("");
+      setEmail("");
+      setFullname("");
+      setAddress("");
+      setPhone("");
+      setPassword("");
+      setConfirmPassword("");
+    } else {
+      toast.error("Signup failed!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
 
     // Clear form or perform further actions after successful signup
   };
