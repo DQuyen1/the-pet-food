@@ -1,23 +1,33 @@
 import { Button, TextField } from "@mui/material";
 import userImage from "../assets/images/default.jpg";
+import "../assets/css/Contact.css";
 
 export default function Contact() {
   return (
-    <div className="contact-page-content" style={{}}>
-      <p style={{ textAlign: "center" }}>CHI NHÁNH MỚI</p>
-      <h2 style={{ textAlign: "center" }}>
+    <div className="contact-page-content">
+      <p style={{ textAlign: "center", fontFamily: "sans-serif" }}>
+        CHI NHÁNH MỚI
+      </p>
+      <h2 style={{ textAlign: "center", fontFamily: "sans-serif" }}>
         Hệ thống phân phối pate tươi cho chó mèo
       </h2>
-      <hr />
-      <p style={{ textAlign: "center", marginTop: "1rem" }}>
+      <hr className="custom-hr" />
+      <p
+        style={{
+          textAlign: "center",
+          marginTop: "1rem",
+          fontFamily: "sans-serif",
+          fontSize: "1.2rem",
+        }}
+      >
         Danh sách được cập nhật ngày 08/08/2024
       </p>
-      <p>
+      <p style={{ fontFamily: "sans-serif" }}>
         Pate tươi quốc dân cho chó mèo Thepetfood.vn đã mở rộng “độ phủ” của
         mình để các Sen có thể dễ dàng mua hàng phục vụ boss. Cùng cập nhật lại
         hơn 100+địa chỉ hiện đang phân phối pate tươi The Pet -food nào:
       </p>
-      <p>
+      <p style={{ fontFamily: "sans-serif" }}>
         [Lưu ý: với những cửa hàng cộng tác viên [CTV], các Sen vui lòng liên hệ
         trước theo số điện thoại hotline để được phục vụ tốt nhất ạ ^^]
       </p>

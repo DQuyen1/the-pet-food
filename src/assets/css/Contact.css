@@ -1,0 +1,7 @@
+.custom-hr {
+    width: 5%;
+    height: 3px; /* Adjust thickness */
+    background-color: grey;
+    border: none;
+    margin: 1rem auto; /* Center align (optional) */
+  }
