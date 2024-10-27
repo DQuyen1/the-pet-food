@@ -46,22 +46,59 @@ export default function NavBar() {
           flexGrow: 8,
         }}
       >
-        <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
+        <NavLink
+          to="/"
+          style={{
+            textDecoration: "none",
+            color: "black",
+            fontWeight: "normal",
+            fontFamily: "Arial",
+          }}
+        >
           {" "}
           GIỚI THIỆU
         </NavLink>
-        <NavLink to="/shop" style={{ textDecoration: "none", color: "black" }}>
+        <NavLink
+          to="/shop"
+          style={{
+            textDecoration: "none",
+            color: "black",
+            fontWeight: "normal",
+            fontFamily: "Arial",
+          }}
+        >
           SHOP
         </NavLink>
-        <NavLink to="/menu" style={{ textDecoration: "none", color: "black" }}>
+        <NavLink
+          to="/menu"
+          style={{
+            textDecoration: "none",
+            color: "black",
+            fontWeight: "normal",
+            fontFamily: "Arial",
+          }}
+        >
           MENU THỨC ĂN
         </NavLink>
-        <NavLink to="/blog" style={{ textDecoration: "none", color: "black" }}>
+        <NavLink
+          to="/blog"
+          style={{
+            textDecoration: "none",
+            color: "black",
+            fontWeight: "normal",
+            fontFamily: "Arial",
+          }}
+        >
           BLOG
         </NavLink>
         <NavLink
           to="/contact"
-          style={{ textDecoration: "none", color: "black" }}
+          style={{
+            textDecoration: "none",
+            color: "black",
+            fontWeight: "normal",
+            fontFamily: "Arial",
+          }}
         >
           LIÊN HỆ
         </NavLink>

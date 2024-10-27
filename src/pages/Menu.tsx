@@ -66,7 +66,7 @@ export default function Menu() {
           display: "flex",
           flexWrap: "wrap", // Allow wrapping if there are more than 3 items
           justifyContent: "space-between",
-          width: "50%", // Space items evenly
+          width: "55%", // Space items evenly
         }}
       >
         {products.length > 0 ? (

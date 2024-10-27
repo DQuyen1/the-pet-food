@@ -3,7 +3,7 @@
     flex-wrap: wrap; /* Enables wrapping to new rows */
     gap: 5rem 0rem; /* Adds spacing between items */
     justify-content: space-evenly;
-    width: 40%;
+    width: 45%;
     margin-bottom: 5rem;
 }
 

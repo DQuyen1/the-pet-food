@@ -11,6 +11,8 @@
   .line-one {
     display: block;
     color: #f84a30;
+    font-family: "Arial";
+    font-weight: "normal",
   }
   
   .line-two {
