@@ -268,29 +268,34 @@ export default function Cart() {
                 <p style={{ color: "#808080" }}>YOUR ORDER</p>
                 <p style={{ color: "#808080" }}>PRODUCT</p>
               </div>
-              {/* {cart.map((item, index) => (
-                <div key={index} className="form-content">
-                  <p>
-                    {item.productName} x {item.quantity}
-                  </p>
-                </div>
-              ))} */}
 
               <div className="form-content">
-                <p style={{ color: "#808080", alignItems: "" }}>SUBTOTAL</p>
+                <p
+                  style={{
+                    color: "#808080",
+                    alignContent: "center",
+                    marginTop: "1.1rem",
+                  }}
+                >
+                  SUBTOTAL
+                </p>
               </div>
 
-              {/* {cart.map((item, index) => (
-                <div key={index} className="form-content">
-                  <p>{item.productPrice * item.quantity} đ</p>
-                </div>
-              ))} */}
-              {/* <div className="form-content">
-                <p>Pate hỗn hợp gà ( Mixed Chicken and liver ) hộp 1kg</p>
-              </div>
-              <div className="form-content">
-                <p>190.000 đ</p>
-              </div> */}
+              {cart.map((item, index) => (
+                <>
+                  <div key={index} className="form-content">
+                    <p>
+                      {item.productName} x {item.quantity}
+                    </p>
+                  </div>
+
+                  <div className="form-content">
+                    <p style={{ color: "#808080", alignItems: "" }}>
+                      {item.productPrice * item.quantity}đ
+                    </p>
+                  </div>
+                </>
+              ))}
               <div className="form-content">
                 <p style={{ fontWeight: "bold" }}>Shipping</p>
               </div>

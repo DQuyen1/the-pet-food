@@ -34,25 +34,28 @@
     background-color: #F5F5F9;
     border: 1px solid #000000;
     padding-bottom: 2rem;
+    
+    
 }
 .form-content {
     border-bottom: 1px #000000 solid;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    
 
 }
 
- th, td {
 
+  
+
+ th, td {
     padding: 12px 20px; 
     text-align: left; 
-
 }
 
 
 th {
     color: #6b6868;
-
 }
 
 .table-cart {

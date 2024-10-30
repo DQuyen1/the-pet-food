@@ -11,6 +11,11 @@
 
 .description {
     margin-bottom: 1rem;
+    width: 1300px;
+    /* width: auto; */
+    font-size: 22px;
+    text-align: justify;
+    margin-bottom: 0;
 }
 
 
@@ -28,13 +33,14 @@
 
 .fullwidth-image {
     width: 100vw;
-    height: 20rem;
+    height: 23rem;
 
 }
 
 .fullwidth-container {
     width: 100vw;
     position: relative;
+    margin-bottom: 1.5rem;
 
    
 }
@@ -48,8 +54,17 @@
 
 .text-center {
     position: absolute;
-    top: 37%;
+    top: 5%;
     width: 100%;
     text-align: center;
-    font-size: 40px;
+    /* font-size: 40px; */
 }
+
+.text-center p:not(.highlighted-p) {
+    width: 728.07px; /* Adjust the width as needed */
+    margin: 0 auto; 
+    text-align: start;
+    font-family: 'Arial';
+
+  }
+  

@@ -32,7 +32,11 @@ export default function NavBar() {
         backgroundColor: "#D9D9D9",
       }}
     >
-      <h3 className="app-name" style={{ flexGrow: 1 }}>
+      <h3
+        className="app-name"
+        style={{ flexGrow: 1 }}
+        onClick={() => navigate("/main")}
+      >
         <span className="line-one">Pate-aholic</span>
 
         {/* <span className="line-two">FOOD</span> */}

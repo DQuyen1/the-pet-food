@@ -48,25 +48,42 @@ export default function Menu() {
     >
       <p>TIN KHUYẾN MÃI</p>
       <h2>Menu Thức Ăn The Petfood Vietnam</h2>
-      <p>Danh sách thức ăn tại Thepetfood Vietnam</p>
+      <p style={{ fontWeight: "bold", marginBottom: "1rem" }}>
+        Danh sách thức ăn tại Thepetfood Vietnam
+      </p>
       <img
         src="https://res.cloudinary.com/dchov8fes/image/upload/v1729851335/gosgipl1bvisqnilqb6a.png"
         alt=""
-        style={{ width: "800px", height: "400px", marginBottom: "1rem" }}
+        style={{
+          width: "960.44px",
+          height: "400px",
+          marginBottom: "1rem",
+          paddingLeft: "0rem",
+          alignSelf: "flex-start",
+          marginLeft: "26.5rem",
+        }}
       />{" "}
       <br />
       <img
         src="https://res.cloudinary.com/dchov8fes/image/upload/v1729851516/lgi8omr3v4txme1lgqlx.png"
         alt=""
-        style={{ width: "800px", height: "400px", marginBottom: "1rem" }}
+        style={{
+          width: "960.44px",
+          height: "400px",
+          marginBottom: "1rem",
+          paddingLeft: "0rem",
+          alignSelf: "flex-start",
+          marginLeft: "26.5rem",
+        }}
       />
       {/* Flex container to hold ProductItem components */}
       <div
         style={{
           display: "flex",
           flexWrap: "wrap", // Allow wrapping if there are more than 3 items
-          justifyContent: "space-between",
-          width: "55%", // Space items evenly
+          alignItems: "flex-start",
+          width: "54%",
+          gap: "1rem", // Space items evenly
         }}
       >
         {products.length > 0 ? (
@@ -77,7 +94,7 @@ export default function Menu() {
                 flex: "1 1 33.33%", // Ensures three items per row
                 maxWidth: "23.33%",
                 marginBottom: "1.5rem",
-
+                gap: "1rem",
                 cursor: "pointer",
                 // Add spacing between rows
               }}

@@ -4,6 +4,7 @@ import Cart from "../pages/Cart";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import MainPage from "../pages/mainPage";
 import Menu from "../pages/Menu";
 import NotFound from "../pages/NotFound";
 import Order from "../pages/Order";
@@ -62,6 +63,11 @@ export const routes = [
         path: "/order/:id",
         element: <Order />,
       },
+      {
+        path: "/main",
+        element: <MainPage />,
+      },
+
       {
         path: "/profile",
         element: <Profile />,

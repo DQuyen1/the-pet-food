@@ -6,6 +6,7 @@ import CategoryService from "../services/categoryService";
 import "../assets/css/Shop.css";
 import { useNavigate } from "react-router-dom";
 import UserService from "../services/userService";
+import Pagination from "@mui/material/Pagination";
 
 export default function Shop() {
   const [products, setProducts] = useState([]);
@@ -16,6 +17,9 @@ export default function Shop() {
   const category_service = new CategoryService();
   const user_service = new UserService();
   const navigation = useNavigate();
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8; // Number of items per page
 
   // Fetch products
   async function fetchProduct() {
@@ -31,6 +35,12 @@ export default function Shop() {
     console.log("product data: ", response);
   }
 
+  function changeCategory(id, name) {
+    fetchProductByCategoryId(id);
+    setCurrentCategory(name);
+    setCurrentPage(1); // Reset to first page when category changes
+  }
+
   // Fetch categories
   async function fetchCategories() {
     const response = await category_service.fetchCategory(); // Assuming your service has a fetchCategories method
@@ -44,12 +54,6 @@ export default function Shop() {
     console.log("product data by category id: ", response);
   }
 
-  function changeCategory(id: number, name: string) {
-    fetchProductByCategoryId(id);
-    setCurrentCategory(name);
-    //console.log("goToProductDetail: ", id);
-  }
-
   function goToProductDetail(id: number) {
     navigation(`/order/${id}`);
     console.log("goToProductDetail: ", id);
@@ -60,6 +64,23 @@ export default function Shop() {
     fetchProduct();
     console.log(currentUser);
   }
+
+  // const handlePageChange = (event, value) => {
+  //     setCurrentPage(value);
+  //   };
+
+  // const displayedProducts = products.slice(
+  //   (currentPage - 1) * itemsPerPage,
+  //   currentPage * itemsPerPage
+  // );
+
+  const displayedProducts =
+    products && products.length > 0
+      ? products.slice(
+          (currentPage - 1) * itemsPerPage,
+          currentPage * itemsPerPage
+        )
+      : [];
 
   useEffect(() => {
     fetchProduct();
@@ -81,10 +102,16 @@ export default function Shop() {
         }}
       />
 
-      <p style={{ marginLeft: "20px", marginBottom: "20px" }}>
+      <p style={{ marginLeft: "16rem", marginBottom: "20px" }}>
         SHOP/{currentCategory}
       </p>
-      <div style={{ display: "flex", flexDirection: "row", height: "60vh" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          // height: "55vh"
+        }}
+      >
         <div
           style={{
             flex: "none",
@@ -96,6 +123,7 @@ export default function Shop() {
             flexDirection: "column",
             padding: "0px 20px",
             height: "646px",
+            marginLeft: "15rem",
           }}
           className="category-item"
         >
@@ -114,33 +142,15 @@ export default function Shop() {
             <p>Danh mục sản phẩm</p>
           </div>
 
-          <button
-            className="p-button"
-            // style={{
-            //   all: "unset",
-            //   marginBottom: "1rem",
-            //   fontSize: "18px",
-            //   borderBottom: "1px solid black",
-            //   width: "100%",
-            // }}
-            onClick={() => allCategory()}
-          >
+          <button className="p-button" onClick={() => allCategory()}>
             Tất cả
           </button>
 
-          {/* Dynamically render category buttons */}
           {categories.length > 0 ? (
             categories.map((category, index) => (
               <button
                 key={index}
                 className="p-button"
-                // style={{
-                //   all: "unset",
-                //   marginBottom: "1rem",
-                //   fontSize: "18px",
-                //   borderBottom: "1px solid black",
-                //   width: "100%",
-                // }}
                 onClick={() =>
                   changeCategory(category.categoryId, category.categoryName)
                 }
@@ -159,28 +169,26 @@ export default function Shop() {
             flexDirection: "row",
             display: "flex",
             alignItems: "flex-start",
-            justifyContent: "space-evenly",
             flexWrap: "wrap",
-            height: "500px",
-            width: "70%",
             marginLeft: "20px",
+            maxWidth: "1100px",
           }}
         >
-          {products.length > 0 ? (
-            products.map((product, index) => (
+          {displayedProducts && displayedProducts.length > 0 ? (
+            displayedProducts.map((product, index) => (
               <button
                 key={index}
-                style={{ flex: "1 1 calc(23.33%)", width: "100px" }}
-                // style={{
-                //   display: "inline-flex", // Makes button wrap tightly around content
-                //   alignItems: "center",
-                //   justifyContent: "center",
-                //   padding: 0,
-                //   margin: "10px",
-                //   cursor: "pointer",
-                //   border: "none", // Remove any default button border
-                //   backgroundColor: "transparent", // Optional for aesthetic purposes
-                // }}
+                style={{
+                  // flex: "1 1 220px",
+                  // maxWidth: "220px",
+                  // margin: "10px", // Adds even spacing around each item
+                  // boxSizing: "border-box",
+
+                  flex: "1 1 220px", // Ensures each item occupies 25% width, accounting for margins
+                  maxWidth: "220px",
+                  margin: "0px 10px", // Controls top/bottom spacing
+                  boxSizing: "border-box",
+                }}
                 className="product-button"
                 onClick={() => goToProductDetail(product.productId)}
               >
@@ -192,9 +200,25 @@ export default function Shop() {
               </button>
             ))
           ) : (
-            <p>Loading products...</p>
+            <div style={{ justifyItems: "center", width: "100%" }}>
+              <p>Don't have any product yet</p>
+            </div>
           )}
         </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "1rem",
+        }}
+      >
+        <Pagination
+          count={products ? Math.ceil(products.length / itemsPerPage) : 1}
+          page={currentPage}
+          onChange={(event, value) => setCurrentPage(value)}
+          variant="outlined"
+        />
       </div>
     </div>
   );

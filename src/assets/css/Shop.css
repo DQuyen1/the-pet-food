@@ -31,4 +31,5 @@
   .product-button {
     all: unset;
     cursor: pointer;
+    margin-bottom: 1rem;
   }

@@ -17,7 +17,7 @@ export default function ProductItem({ name, price, image }) {
   return (
     <div>
       <img src={image} alt="" className="product-image" />
-      <p>{name}</p>
+      <p style={{ width: "220px" }}>{name}</p>
       <p style={{ fontWeight: "bold" }}>{price} đ</p>
       {Array.from({ length: rating }).map((_, index) => (
         <BsStarFill key={index} color="yellow" />
