@@ -23,6 +23,7 @@ export default function Signup() {
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [errors, setErrors] = useState<ErrorType>({});
+  // const cart_service = new CartService();
 
   const auth_service = new AuthService();
 

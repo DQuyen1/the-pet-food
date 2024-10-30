@@ -27,8 +27,8 @@ export default class CartItemService {
     }
   }
 
-  async updateCartItem(cartId: number, quantity: number) {
-    const url = `https://13.215.159.74/api/CartItem/${cartId}`;
+  async updateCartItem(cartItemId: number, quantity: number) {
+    const url = `https://13.215.159.74/api/CartItem/${cartItemId}`;
 
     try {
       const response = await fetch(url, {

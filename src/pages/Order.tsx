@@ -7,6 +7,7 @@ import ProductService from "../services/productService";
 
 import { toast } from "react-toastify";
 import { useCart } from "../context/cartContext";
+import CartItemService from "../services/cartItemService";
 // import CommentSection from "../components/CommentSection";
 // import defaultImg from "../assets/images/default.jpg";
 
@@ -15,36 +16,9 @@ export default function Order() {
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const product_service = new ProductService();
+  const cart_item_service = new CartItemService();
 
   const { addItemToCart } = useCart();
-
-  // const defaultComment = [
-  //   {
-  //     userName: "John Doe",
-  //     comment: "Great product!",
-  //     date: "2022-01-01",
-  //     avatar: defaultImg,
-  //   },
-  //   {
-  //     userName: "Jane Smith",
-  //     comment: "I'm enjoying using this product!",
-  //     date: "2022-02-01",
-  //     avatar: defaultImg,
-  //   },
-  //   {
-  //     userName: "Bob Johnson",
-  //     comment: "I'm really enjoying this product!",
-  //     date: "2022-03-01",
-  //     avatar: defaultImg,
-  //   },
-  // ];
-
-  // const [comments, setComments] = useState(defaultComment);
-  // const [userComment, setUserComment] = useState("");
-
-  // function addNewComment(newComment) {
-  //   setComments((prevComment) => [...prevComment, newComment]);
-  // }
 
   function handleQuantityChange(action) {
     if (action === "plus") {
@@ -91,10 +65,17 @@ export default function Order() {
         progress: undefined,
       });
     } else {
-      const cartItemId = Date.now(); // Returns the current timestamp
+      // const cartItemId = Date.now(); // Returns the current timestamp
+      const cartId = localStorage.getItem("cartId");
+
+      const data = await cart_item_service.createCartItem(
+        Number(cartId),
+        Number(id),
+        quantity
+      );
 
       addItemToCart(
-        cartItemId,
+        data.cartItemId,
         Number(id),
         quantity,
         product.productName,
@@ -116,11 +97,11 @@ export default function Order() {
   }, []);
 
   return (
-    <div>
+    <div style={{ marginLeft: "25rem" }}>
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "flex-start",
           alignItems: "flex-start",
           marginBottom: "1rem",
           width: "90%",
@@ -222,10 +203,16 @@ export default function Order() {
           </div>
         </div>
       </div>
-      <img src={blankImage} alt="" style={{ width: "10%", height: "10%" }} />
+      <img
+        src="https://res.cloudinary.com/dchov8fes/image/upload/v1730298407/ljfefajq1cozudxymjvw.png"
+        // src={blankImage}
+        alt=""
+        style={{ width: "10%", height: "10%" }}
+      />
 
       <img
-        src={blankImage}
+        src="https://res.cloudinary.com/dchov8fes/image/upload/v1730298414/xtinnwtqgal9yaohgej0.png"
+        // src={blankImage}
         alt=""
         style={{ width: "10%", height: "10%", marginLeft: "1rem" }}
       />

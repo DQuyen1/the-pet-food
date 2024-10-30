@@ -13,12 +13,14 @@ import { useEffect, useState } from "react";
 import { useCart } from "../context/cartContext";
 import UserService from "../services/userService";
 import { useNavigate } from "react-router-dom";
+import CartItemService from "../services/cartItemService";
 
 export default function Cart() {
   const order_service = new OrderService();
   const { cart, updateItemQuantity, clearCart, removeItemFromCart } = useCart(); // Accessing cart directly from context
   const [currentUser, setCurrentUser] = useState(null);
   const user_service = new UserService();
+  const cart_item_service = new CartItemService();
 
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
@@ -41,10 +43,28 @@ export default function Cart() {
     console.log(currentUser);
   }
 
-  async function createOrder() {
-    await order_service.createOrder(13, 100);
+  const calculateTotal = () => {
+    return cart.reduce(
+      (total, item) => total + item.productPrice * item.quantity,
+      0
+    );
+  };
 
+  async function updateCartItem() {
+    for (const item of cart) {
+      const { cartItemId, quantity } = item;
+      try {
+        await cart_item_service.updateCartItem(cartItemId, quantity);
+        console.log(`Successfully updated cartitem with ID: ${cartItemId}`);
+      } catch (error) {
+        console.error(`Error updating cartitem with ID: ${cartItemId}`, error);
+      }
+    }
+  }
+
+  async function createOrder() {
     const userId = localStorage.getItem("userId");
+    const cartId = localStorage.getItem("cartId");
 
     if (!userId) {
       // Notify user to log in
@@ -69,30 +89,33 @@ export default function Cart() {
           progress: undefined,
         });
       } else {
-        toast.success("Order created successfully!", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-        });
+        try {
+          await updateCartItem();
+          console.log("Cart items updated successfully.");
 
-        localStorage.setItem("recentOrder", JSON.stringify(cart));
+          await order_service.createOrder(cartId);
 
-        clearCart();
+          toast.success("Order created successfully!", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
 
-        navigate("/profile");
+          localStorage.setItem("recentOrder", JSON.stringify(cart));
+
+          clearCart();
+
+          navigate("/profile");
+        } catch (error) {
+          console.error("Error creating order:", error);
+          toast.error("Failed to create the order. Please try again later.");
+        }
       }
     }
   }
-
-  const calculateTotal = () => {
-    return cart.reduce(
-      (total, item) => total + item.productPrice * item.quantity,
-      0
-    );
-  };
 
   useEffect(() => {
     console.log("Global Cart Items: ", cart);

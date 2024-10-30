@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import MainPage from "../pages/mainPage";
 import Menu from "../pages/Menu";
 import NotFound from "../pages/NotFound";
+import OrderDetail from "../pages/OderDetail";
 import Order from "../pages/Order";
 import Policy from "../pages/Policy";
 import Profile from "../pages/Profile";
@@ -71,6 +72,10 @@ export const routes = [
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/order-detail/:orderId",
+        element: <OrderDetail />,
       },
     ],
   },

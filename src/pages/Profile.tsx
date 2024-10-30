@@ -1,133 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import {
-//   Typography,
-//   Grid,
-//   Paper,
-//   Table,
-//   TableBody,
-//   TableCell,
-//   TableContainer,
-//   TableHead,
-//   TableRow,
-//   Button,
-// } from "@mui/material";
-// import { useCart } from "../context/cartContext";
-// import UserService from "../services/userService";
-// import { useNavigate } from "react-router-dom";
-
-// export default function Profile() {
-//   const user_service = new UserService();
-//   const { cart } = useCart(); // Accessing cart from context
-//   const [currentUser, setCurrentUser] = useState(null);
-//   const [recentOrder, setRecentOrder] = useState([]);
-//   const navigate = useNavigate();
-//   const { clearCart } = useCart();
-
-//   // Fetch user by ID
-//   async function fetchUserById() {
-//     const userId = localStorage.getItem("userId");
-//     if (userId) {
-//       const response = await user_service.fetchUserById(userId);
-//       setCurrentUser(response);
-//     }
-//   }
-
-//   function handleLogout() {
-//     // Clear localStorage
-//     localStorage.clear();
-//     clearCart();
-//     // Redirect to home page
-//     navigate("/");
-//   }
-//   useEffect(() => {
-//     fetchUserById();
-
-//     const storedOrder = localStorage.getItem("recentOrder");
-//     if (storedOrder) {
-//       setRecentOrder(JSON.parse(storedOrder));
-//       // Optionally clear the stored order if you don't want to keep it
-//       //localStorage.removeItem("recentOrder");
-//     }
-//   }, []);
-
-//   return (
-//     <div style={{ padding: "2rem" }}>
-//       <Typography variant="h4" gutterBottom>
-//         User Profile
-//       </Typography>
-//       {currentUser ? (
-//         <Paper style={{ padding: "2rem", marginBottom: "2rem" }}>
-//           <Typography variant="h6">User Information</Typography>
-//           <Grid container spacing={2}>
-//             <Grid item xs={12} md={6}>
-//               <Typography>
-//                 <strong>Full Name:</strong> {currentUser.fullName}
-//               </Typography>
-//               <Typography>
-//                 <strong>Email:</strong> {currentUser.email}
-//               </Typography>
-//               <Typography>
-//                 <strong>Phone:</strong> {currentUser.phone}
-//               </Typography>
-//             </Grid>
-//             <Grid item xs={12} md={6}>
-//               <Typography>
-//                 <strong>Address:</strong> {currentUser.address}
-//               </Typography>
-//               <Typography>
-//                 <strong>City:</strong> {currentUser.city}
-//               </Typography>
-//               <Typography>
-//                 <strong>Country:</strong> {currentUser.country}
-//               </Typography>
-//             </Grid>
-//           </Grid>
-//         </Paper>
-//       ) : (
-//         <Typography variant="body1">Loading user information...</Typography>
-//       )}
-
-//       <Typography variant="h6" gutterBottom>
-//         Order History
-//       </Typography>
-//       {cart.length > 0 ? (
-//         <TableContainer component={Paper}>
-//           <Table>
-//             <TableHead>
-//               <TableRow>
-//                 <TableCell>Product</TableCell>
-//                 <TableCell>Price</TableCell>
-//                 <TableCell>Quantity</TableCell>
-//                 <TableCell>Subtotal</TableCell>
-//               </TableRow>
-//             </TableHead>
-//             <TableBody>
-//               {cart.map((item, index) => (
-//                 <TableRow key={index}>
-//                   <TableCell>{item.productName}</TableCell>
-//                   <TableCell>{item.productPrice} đ</TableCell>
-//                   <TableCell>{item.quantity}</TableCell>
-//                   <TableCell>{item.productPrice * item.quantity} đ</TableCell>
-//                 </TableRow>
-//               ))}
-//             </TableBody>
-//           </Table>
-//         </TableContainer>
-//       ) : (
-//         <Typography variant="body1">No orders found.</Typography>
-//       )}
-//       <Button
-//         variant="contained"
-//         color="primary"
-//         style={{ marginTop: "2rem" }}
-//         onClick={() => handleLogout()}
-//       >
-//         Logout
-//       </Button>
-//     </div>
-//   );
-// }
-
 import { useEffect, useState } from "react";
 import {
   Typography,
@@ -142,15 +12,19 @@ import {
   Button,
 } from "@mui/material";
 import UserService from "../services/userService";
+import OrderService from "../services/orderService";
 import { useNavigate } from "react-router-dom";
+import { format } from "date-fns";
 
 export default function Profile() {
   const user_service = new UserService();
+  const order_service = new OrderService();
   const [currentUser, setCurrentUser] = useState(null);
-  const [recentOrder, setRecentOrder] = useState([]); // State for storing the recent order
+  // const [recentOrder, setRecentOrder] = useState([]);
+  const [orders, setOrders] = useState([]); // State for storing user's orders
   const navigate = useNavigate();
 
-  // Fetch user by ID
+  // Fetch user information
   async function fetchUserById() {
     const userId = localStorage.getItem("userId");
     if (userId) {
@@ -159,24 +33,36 @@ export default function Profile() {
     }
   }
 
-  // Function to handle logout
+  // Fetch user orders
+  async function fetchUserOrders() {
+    const userId = localStorage.getItem("userId");
+    try {
+      const userOrderData = await order_service.fetchOrdersByUserId(userId);
+      setOrders(userOrderData);
+    } catch (error) {
+      console.error("Error fetching orders: ", error);
+    }
+  }
+
+  // Handle logout
   function handleLogout() {
     localStorage.clear();
-    // Clear cart if you have a cart context
-    // clearCart(); // Uncomment if you have cart context
     navigate("/");
   }
 
-  // Retrieve recent order from localStorage
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    return format(date, "dd-MM-yyyy HH:mm");
+  }
+
   useEffect(() => {
     fetchUserById();
+    fetchUserOrders();
 
-    const storedOrder = localStorage.getItem("recentOrder");
-    if (storedOrder) {
-      setRecentOrder(JSON.parse(storedOrder));
-      // Optionally clear the stored order if you don't want to keep it
-      //localStorage.removeItem("recentOrder");
-    }
+    // const storedOrder = localStorage.getItem("recentOrder");
+    // if (storedOrder) {
+    //   setRecentOrder(JSON.parse(storedOrder));
+    // }
   }, []);
 
   return (
@@ -184,9 +70,13 @@ export default function Profile() {
       <Typography variant="h4" gutterBottom>
         User Profile
       </Typography>
+
+      {/* User Information */}
       {currentUser ? (
         <Paper style={{ padding: "2rem", marginBottom: "2rem" }}>
-          <Typography variant="h6">User Information</Typography>
+          <Typography variant="h6" gutterBottom>
+            User Information
+          </Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
               <Typography>
@@ -216,27 +106,37 @@ export default function Profile() {
         <Typography variant="body1">Loading user information...</Typography>
       )}
 
+      {/* Order History */}
       <Typography variant="h6" gutterBottom>
         Order History
       </Typography>
-      {recentOrder.length > 0 ? (
-        <TableContainer component={Paper}>
+      {orders.length > 0 ? (
+        <TableContainer component={Paper} style={{ marginBottom: "2rem" }}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Product</TableCell>
-                <TableCell>Price</TableCell>
-                <TableCell>Quantity</TableCell>
-                <TableCell>Subtotal</TableCell>
+                <TableCell>Order#</TableCell>
+                <TableCell>Date</TableCell>
+                <TableCell>Total Price</TableCell>
+                <TableCell></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {recentOrder.map((item, index) => (
-                <TableRow key={index}>
-                  <TableCell>{item.productName}</TableCell>
-                  <TableCell>{item.productPrice} đ</TableCell>
-                  <TableCell>{item.quantity}</TableCell>
-                  <TableCell>{item.productPrice * item.quantity} đ</TableCell>
+              {orders.map((order) => (
+                <TableRow key={order.orderId} hover>
+                  <TableCell>{order.orderId}</TableCell>
+                  <TableCell>{formatDate(order.date)}</TableCell>
+
+                  <TableCell>{order.total} đ</TableCell>
+                  <TableCell>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      onClick={() => navigate(`/order-detail/${order.orderId}`)}
+                    >
+                      View Details
+                    </Button>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -245,6 +145,8 @@ export default function Profile() {
       ) : (
         <Typography variant="body1">No orders found.</Typography>
       )}
+
+      {/* Logout Button */}
       <Button
         variant="contained"
         color="primary"

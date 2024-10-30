@@ -48,6 +48,23 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   //   setCart((prevCart) => [...prevCart, { cartItemId, productId, quantity }]);
   // };
 
+  // const addItemToCart = (
+  //   cartItemId,
+  //   productId,
+  //   quantity,
+  //   productName,
+  //   productPrice
+  // ) => {
+  //   setCart((prevCart) => {
+  //     const newCart = [
+  //       ...prevCart,
+  //       { cartItemId, productId, quantity, productName, productPrice },
+  //     ];
+  //     console.log("Updated Cart Array:", newCart); // Check cart contents here
+  //     return newCart;
+  //   });
+  // };
+
   const addItemToCart = (
     cartItemId,
     productId,
@@ -56,12 +73,25 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     productPrice
   ) => {
     setCart((prevCart) => {
-      const newCart = [
-        ...prevCart,
-        { cartItemId, productId, quantity, productName, productPrice },
-      ];
-      console.log("Updated Cart Array:", newCart); // Check cart contents here
-      return newCart;
+      // Check if the item already exists in the cart by productId
+      const itemExists = prevCart.find((item) => item.productId === productId);
+
+      if (itemExists) {
+        // If it exists, increase the quantity
+        return prevCart.map((item) =>
+          item.productId === productId
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
+        );
+      } else {
+        // If it doesn't exist, add it as a new item
+        const newCart = [
+          ...prevCart,
+          { cartItemId, productId, quantity, productName, productPrice },
+        ];
+        console.log("Updated Cart Array:", newCart);
+        return newCart;
+      }
     });
   };
 
