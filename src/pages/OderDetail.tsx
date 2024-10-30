@@ -167,7 +167,7 @@ export default function OrderDetail() {
             <Typography variant="h4" gutterBottom>
               Order Details
             </Typography>
-            <Paper
+            {/* <Paper
               elevation={3}
               style={{ padding: "2rem", marginBottom: "2rem" }}
             >
@@ -197,11 +197,11 @@ export default function OrderDetail() {
                   </Typography>
                 </Grid>
               </Grid>
-            </Paper>
+            </Paper> */}
 
-            <Typography variant="h5" gutterBottom>
+            {/* <Typography variant="h5" gutterBottom>
               Products in this Order
-            </Typography>
+            </Typography> */}
             <TableContainer component={Paper}>
               <Table>
                 <TableHead>
