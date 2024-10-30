@@ -15,6 +15,7 @@ export default function Footer() {
           justifyContent: "center",
           gap: "4rem",
           marginBottom: "2rem",
+          marginLeft: "13rem",
           // marginTop: "2rem",
         }}
       >
