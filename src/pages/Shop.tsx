@@ -216,7 +216,10 @@ export default function Shop() {
         <Pagination
           count={products ? Math.ceil(products.length / itemsPerPage) : 1}
           page={currentPage}
-          onChange={(event, value) => setCurrentPage(value)}
+          onChange={(event, value) => {
+            console.log(event);
+            setCurrentPage(value);
+          }}
           variant="outlined"
         />
       </div>
