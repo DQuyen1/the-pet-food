@@ -90,10 +90,15 @@ export default function Login() {
 
     try {
       const data = await auth_service.login(username, password);
-      localStorage.setItem("userId", JSON.stringify(data.userId));
-      const cartData = await cart_service.createCart(data.userId);
-      localStorage.setItem("cartId", JSON.stringify(cartData.cartId));
-      navigation("/");
+
+      if (data.role == 0) {
+        navigation("/dashboard");
+      } else {
+        localStorage.setItem("userId", JSON.stringify(data.userId));
+        const cartData = await cart_service.createCart(data.userId);
+        localStorage.setItem("cartId", JSON.stringify(cartData.cartId));
+        navigation("/");
+      }
     } catch (error) {
       console.log("error while login: ", error);
     }

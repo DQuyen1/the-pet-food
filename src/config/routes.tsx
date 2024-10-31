@@ -1,8 +1,11 @@
 import RootLayout from "../components/RootLayout";
+import AdminOrderDetail from "../pages/admin_order_detail";
 import Blog from "../pages/Blog";
 import Cart from "../pages/Cart";
 import Contact from "../pages/Contact";
+import Dashboard from "../pages/Dashboard";
 import Home from "../pages/Home";
+import OrderList from "../pages/ListOfOrder";
 import Login from "../pages/Login";
 import MainPage from "../pages/mainPage";
 import Menu from "../pages/Menu";
@@ -87,5 +90,20 @@ export const routes = [
   {
     path: "/signup",
     element: <Signup />,
+  },
+
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+
+  {
+    path: "/orders",
+    element: <OrderList />,
+  },
+
+  {
+    path: "/admin_order_detail/:orderId",
+    element: <AdminOrderDetail />,
   },
 ];

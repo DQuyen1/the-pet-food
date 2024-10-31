@@ -3,12 +3,51 @@ import blankImage from "../assets/images/blank.jpg";
 import company from "../assets/images/company.jpg";
 import how from "../assets/images/1.jpg";
 import what from "../assets/images/Web_150DPI-20190307-WeWork-Tabor-Center-Dogs-of-WeWork_Twitter.jpg";
-// import dog from "../assets/images/image (4).png";
-// import cat from "../assets/images/image (6).png";
+import {
+  BsFillArrowLeftCircleFill,
+  BsFillArrowRightCircleFill,
+} from "react-icons/bs";
+import "../assets/css/MainPage.css";
+import slide1 from "../assets/images/image (4).png";
+import slide2 from "../assets/images/image (6).png";
+import slide3 from "../assets/images/pet5.png";
+import { useState } from "react";
 
 export default function Home() {
+  const images = [slide1, slide2, slide3];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <div className="home-container">
+      <div className="slider-container">
+        <div className="slider-wrapper">
+          <img
+            src={images[currentIndex]}
+            alt={`Slide ${currentIndex + 1}`}
+            className="slider-image"
+          />
+          <button className="slider-button left-button" onClick={handlePrev}>
+            <BsFillArrowLeftCircleFill fontSize={30} />
+          </button>
+          <button className="slider-button right-button" onClick={handleNext}>
+            <BsFillArrowRightCircleFill fontSize={30} />
+          </button>
+        </div>
+      </div>
+
       <div className="title-description">
         <p style={{ fontWeight: "bold" }}>THE PET FOOD VIETNAM</p>
         <p style={{ fontSize: "19px" }}>
@@ -32,18 +71,6 @@ export default function Home() {
           alt="image"
           className="media-image"
         />
-        {/* <p className="description">
-          Menu đa dạng trên 20 loại sản phẩm Pate tươi và thực phẩm bổ sung cho
-          Chó Mèo, <br />
-          Là một công ty mới trong lĩnh vực sản xuất thức ăn chó mèo, công ty
-          TNHH TMDV Thú Cưng Việt Nam vẫn tự hào là đơn vị có quy mô lớn <br />
-          nhất, hoạt động chuyên nghiệp nhất, và có doanh thu cao nhất ngành
-          Thức ăn tươi chó mèo tại Việt Nam. Với menu đa dạng trên 20 loại Pate
-          tươi và thực phẩm bổ sung cho chó mèo, dòng sản phẩm Pate tươi của
-          công ty còn đứng đầu thị trường bởi chất lượng đặc trưng từ thịt, cá,
-          bao bì chuyên nghiệp, dịch vụ giao hàng, hậu mãi tốt và hệ thống phân
-          phối rộng khắp tại các hệ thống thú y, petshop lớn.
-        </p> */}
         <p className="description">
           Menu đa dạng trên 20 loại sản phẩm Pate tươi và thực phẩm bổ sung cho
           Chó Mèo ,

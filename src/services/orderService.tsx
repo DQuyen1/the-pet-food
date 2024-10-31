@@ -1,4 +1,52 @@
 export default class OrderService {
+  async fetchAllOrders() {
+    const url = `https://13.215.159.74/api/Order`;
+
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          // Add any additional headers if needed
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+
+      const data = await response.json();
+
+      return data; // Return the data for further usage
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+    }
+  }
+
+  async fetchOrderByOrderId(orderId) {
+    const url = `https://13.215.159.74/api/Order/${orderId}`;
+
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          // Add any additional headers if needed
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+
+      const data = await response.json();
+
+      return data; // Return the data for further usage
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+    }
+  }
+
   async createOrder(cartId) {
     const url = `https://13.215.159.74/api/Order/cart?cartId=${cartId}`;
 
