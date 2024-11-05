@@ -27,13 +27,21 @@ export default function OrderList() {
     return format(date, "dd-MM-yyyy HH:mm");
   }
 
+  const totalSum = orders.reduce((sum, order) => sum + order.total, 0);
+
   return (
     <Box
       sx={{ padding: "20px", backgroundColor: "#f4f6f8", minHeight: "100vh" }}
     >
-      <Typography variant="h4" gutterBottom>
-        Order List
-      </Typography>
+      <Box>
+        <Typography variant="h4" gutterBottom>
+          Order List
+        </Typography>
+
+        <Typography variant="h4" gutterBottom>
+          Total: {totalSum.toFixed(0)}đ
+        </Typography>
+      </Box>
 
       <Grid container spacing={2}>
         {orders.map((order) => (
