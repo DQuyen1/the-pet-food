@@ -73,25 +73,28 @@ export default function Home() {
         />
         <p className="description">
           Menu đa dạng trên 20 loại sản phẩm Pate tươi và thực phẩm bổ sung cho
-          Chó Mèo ,
-        </p>
-        <p className="description">
+          Chó Mèo , <br />
           Là một công ty mới trong lĩnh vực sản xuất thức ăn chó mèo, công ty
-          TNHH TMDV The Pateaholic Việt Nam vẫn tự hào là đơn vị có quy mô lớn{" "}
-        </p>
-        <p className="description">
+          TNHH TMDV The Pateaholic Việt Nam vẫn tự hào là đơn vị có quy mô lớn
           nhất, hoạt động chuyên nghiệp nhất, và có doanh thu cao nhất ngành
           Thức ăn tươi chó mèo tại Việt Nam. Với menu đa dạng trên 20 loại Pate
-          tươi
+          tươi và thực phẩm bổ sung cho chó mèo, dòng sản phẩm Pate tươi của
+          công ty còn đứng đầu thị trường bởi chất lượng đặc trưng từ thịt, cá,
+          bao bì chuyên nghiệp, dịch vụ giao hàng, hậu mãi tốt và hệ thống phân
+          phối rộng khắp tại các hệ thống thú y, petshop lớn.
+        </p>
+        {/* <p className="description">
+         
         </p>
         <p className="description">
-          và thực phẩm bổ sung cho chó mèo, dòng sản phẩm Pate tươi của công ty
-          còn đứng đầu thị trường bởi chất lượng đặc trưng từ thịt, cá, bao bì
+          
         </p>
         <p className="description">
-          chuyên nghiệp, dịch vụ giao hàng, hậu mãi tốt và hệ thống phân phối
-          rộng khắp tại các hệ thống thú y, petshop lớn.
+          
         </p>
+        <p className="description">
+          
+        </p> */}
         {/* <img src={dog} alt="image" className="media-image" /> <br />
         <img src={cat} alt="image" className="media-image" /> */}
         <br />
