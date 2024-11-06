@@ -131,6 +131,7 @@ export default function NavBar() {
               alignContent: "center",
               fontWeight: "bold",
               fontSize: "18px",
+              fontFamily: "Arial",
             }}
             onClick={() => {
               navigate("/login");

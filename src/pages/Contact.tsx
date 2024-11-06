@@ -1,10 +1,10 @@
-import { Button, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import userImage from "../assets/images/default.jpg";
 import "../assets/css/Contact.css";
 
 export default function Contact() {
   return (
-    <div className="contact-page-content">
+    <div className="contact-page-content" style={{ width: "51%" }}>
       <p style={{ textAlign: "center", fontFamily: "sans-serif" }}>
         CHI NHÁNH MỚI
       </p>
@@ -27,13 +27,19 @@ export default function Contact() {
         mình để các Sen có thể dễ dàng mua hàng phục vụ boss. Cùng cập nhật lại
         hơn 100+địa chỉ hiện đang phân phối pate tươi The Pet -food nào:
       </p>
-      <p style={{ fontFamily: "sans-serif" }}>
+      <p style={{ fontFamily: "sans-serif", marginBottom: "1rem" }}>
         [Lưu ý: với những cửa hàng cộng tác viên [CTV], các Sen vui lòng liên hệ
         trước theo số điện thoại hotline để được phục vụ tốt nhất ạ ^^]
       </p>
       <hr />
-
-      <div style={{ display: "flex", alignItems: "flex-start" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "flex-start",
+          marginTop: "0.5rem",
+          marginBottom: "0.5rem",
+        }}
+      >
         <img
           src={userImage}
           alt="image"
@@ -47,19 +53,29 @@ export default function Contact() {
         <p style={{ fontWeight: "bold", marginLeft: "1rem" }}>MÍT</p>
       </div>
       <hr />
-      <div style={{ marginTop: "1rem" }}>
-        <span style={{ fontWeight: "bold" }}>Leave a reply</span> <br />
-        <span>
-          Your email address will not be published. Required fields are marked *
-        </span>
-        <br />
-      </div>
-      <label
-        htmlFor="comment"
-        style={{ fontWeight: "bold", marginBottom: "1rem" }}
+      {/* <div style={{ marginTop: "1rem" }}> */}
+      <p
+        style={{
+          fontWeight: "bold",
+          // marginBottom: "0.1rem",
+          marginTop: "1rem",
+        }}
       >
-        Comment*
-      </label>
+        Leave a reply
+      </p>{" "}
+      <br />
+      <p style={{ marginTop: "-0.5rem" }}>
+        Your email address will not be published. Required fields are marked *
+      </p>
+      <br />
+      {/* </div> */}
+      <Box mt={-1}>
+        {" "}
+        {/* Equivalent to -1rem if default spacing is 8px */}
+        <label htmlFor="comment" style={{ fontWeight: "bold" }}>
+          Comment*
+        </label>
+      </Box>
       <br />
       <TextField
         id="full-name"

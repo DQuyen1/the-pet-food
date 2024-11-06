@@ -200,7 +200,12 @@ export default function Cart() {
           <Grid container spacing={2}>
             {/* Full Name and Phone */}
             <Grid item xs={12} md={6}>
-              <label htmlFor="full-name">Full Name</label>
+              <label
+                htmlFor="full-name"
+                style={{ display: "block", marginBottom: "1rem" }}
+              >
+                Full Name
+              </label>
               <TextField
                 id="full-name"
                 variant="outlined"
@@ -209,7 +214,12 @@ export default function Cart() {
               />
             </Grid>
             <Grid item xs={12} md={6}>
-              <label htmlFor="phone">Phone</label>
+              <label
+                htmlFor="phone"
+                style={{ display: "block", marginBottom: "1rem" }}
+              >
+                Phone
+              </label>
               <TextField
                 id="phone"
                 variant="outlined"
@@ -220,7 +230,12 @@ export default function Cart() {
 
             {/* Email and Province/City */}
             <Grid item xs={12} md={6}>
-              <label htmlFor="email-address">Email Address </label>
+              <label
+                htmlFor="email-address"
+                style={{ display: "block", marginBottom: "1rem" }}
+              >
+                Email Address{" "}
+              </label>
               <TextField
                 id="email-address"
                 variant="outlined"
@@ -229,23 +244,43 @@ export default function Cart() {
               />
             </Grid>
             <Grid item xs={12} md={6}>
-              <label htmlFor="province/city">Province/City (Optinal)</label>
+              <label
+                htmlFor="province/city"
+                style={{ display: "block", marginBottom: "1rem" }}
+              >
+                Province/City (Optinal)
+              </label>
               <TextField id="province/city" variant="outlined" fullWidth />
             </Grid>
 
             {/* District and Commune/Ward */}
             <Grid item xs={12} md={6}>
-              <label htmlFor="district">District (Optional)</label>
+              <label
+                htmlFor="district"
+                style={{ display: "block", marginBottom: "1rem" }}
+              >
+                District (Optional)
+              </label>
               <TextField id="district" variant="outlined" fullWidth />
             </Grid>
             <Grid item xs={12} md={6}>
-              <label htmlFor="commune">Commune/Ward/Town (Optional)</label>
+              <label
+                htmlFor="commune"
+                style={{ display: "block", marginBottom: "1rem" }}
+              >
+                Commune/Ward/Town (Optional)
+              </label>
               <TextField id="commune" variant="outlined" fullWidth />
             </Grid>
 
             {/* Address */}
             <Grid item xs={12}>
-              <label htmlFor="address">Address</label>
+              <label
+                htmlFor="address"
+                style={{ display: "block", marginBottom: "1rem" }}
+              >
+                Address
+              </label>
               <TextField
                 id="address"
                 variant="outlined"
@@ -257,7 +292,7 @@ export default function Cart() {
           <FormControlLabel
             control={<Checkbox />}
             label="Đăng ký nhận email"
-            style={{ fontWeight: "bold" }}
+            style={{ fontWeight: "bold", marginTop: "1rem" }}
           />
           {/* <FormControlLabel control={<Checkbox />} label="Create an account" /> */}
 

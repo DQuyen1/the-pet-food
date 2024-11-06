@@ -36,8 +36,10 @@ export default function Footer() {
             />
           </div>
           <div className="text-column">
-            <span>Hotline</span>
-            <span>093.1263.080</span>
+            <span style={{ fontWeight: "bold", marginLeft: "10px" }}>
+              Hotline
+            </span>
+            <span style={{ marginLeft: "10px" }}>093.1263.080</span>
           </div>
         </div>
 
@@ -54,8 +56,10 @@ export default function Footer() {
             />
           </div>
           <div className="text-column">
-            <span>Email</span>
-            <span>thepetfood@gmail.com</span>
+            <span style={{ fontWeight: "bold", marginLeft: "10px" }}>
+              Email
+            </span>
+            <span style={{ marginLeft: "10px" }}>thepetfood@gmail.com</span>
           </div>
         </div>
 

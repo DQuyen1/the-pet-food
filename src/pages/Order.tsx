@@ -243,8 +243,8 @@ export default function Order() {
       >
         <p style={{ fontSize: "1.5rem", marginLeft: "0.5rem" }}>4.00</p>
         <div>
-          <BsStarFill color="yellow" />
-          <BsStarFill color="yellow" />
+          <BsStarFill color="yellow" style={{ filter: "brightness(0.9)" }} />
+          <BsStarFill color="yellow" style={{ filter: "brightness(0.9)" }} />
         </div>
       </div>
 

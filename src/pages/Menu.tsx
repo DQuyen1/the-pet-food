@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import "../assets/css/Menu.css";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
-import { Button, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import userImage from "../assets/images/default.jpg";
 
 export default function Menu() {
@@ -114,7 +114,7 @@ export default function Menu() {
       <div
         style={{
           borderBottom: "1px solid black",
-          width: "50%",
+          width: "54%",
           borderTop: "1px solid black",
           display: "flex",
           flexDirection: "row",
@@ -173,7 +173,7 @@ export default function Menu() {
           // marginLeft: "-10rem",
           borderTop: "1px solid black",
           marginTop: "1rem",
-          width: "920px",
+          width: "993px",
           // width: "100%",
         }}
       >
@@ -182,6 +182,7 @@ export default function Menu() {
             display: "flex",
             alignItems: "flex-start",
             marginTop: "1rem",
+            marginBottom: "1rem",
           }}
         >
           <img
@@ -197,19 +198,22 @@ export default function Menu() {
         </div>
         <hr style={{ color: "black" }} />
         <div style={{ marginTop: "1rem" }}>
-          <span style={{ fontWeight: "bold" }}>Leave a reply</span> <br />
-          <span>
+          <p style={{ fontWeight: "bold" }}>Leave a reply</p> <br />
+          <p style={{ marginBottom: "0.1rem" }}>
             Your email address will not be published. Required fields are marked
             *
-          </span>
+          </p>
           <br />
         </div>
-        <label
-          htmlFor="comment"
-          style={{ fontWeight: "bold", marginBottom: "1rem" }}
-        >
-          Comment*
-        </label>
+        <Box mt={-1}>
+          <label
+            htmlFor="comment"
+            style={{ fontWeight: "bold", marginBottom: "1rem" }}
+          >
+            Comment*
+          </label>
+        </Box>
+
         <br />
         <TextField
           id="full-name"

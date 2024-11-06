@@ -196,13 +196,13 @@ export default function Home() {
             HƠN CẢ VẬT NUÔI <br />
             LÀ MỘT TÌNH YÊU BÉ NHỎ
           </p>
-          <p>
+          <p style={{ fontFamily: "Arial" }}>
             Thức ăn tươi cho thú cưng với công thức độc quyền được bác sĩ thú y
             chế biến từ thịt bò gà ẩm mọng, cá tươi mỡ màng, gan béo bùi thơm
             mới, ninh nhừ trong nhiều giờ với nồi áp suất để giữ trọn hương vị
             đậm đà và cốt thịt giàu dinh dưỡng.
           </p>
-          <p>
+          <p style={{ fontFamily: "Arial" }}>
             Mỗi một thìa pate thơm lựng phục vụ trong bữa ăn đều được bác sĩ thú
             y chọn lọc tỉ mỉ từ khâu nguyên liệu tươi sống, với nguồn hàng uy
             tín có truy xuất nguồn gốc rõ ràng, đến khâu chế biến giúp giữ trọn
@@ -210,7 +210,7 @@ export default function Home() {
             phẩm màu hay chất kích thích nào. Giúp cho Boss nhà bạn khỏe đẹp,
             mượt lông & giảm nguy cơ sỏi thận khi ăn quá nhiều thức ăn khô.
           </p>
-          <p>
+          <p style={{ fontFamily: "Arial" }}>
             Để đến được tay khách hàng – từng sản phẩm đều là tâm huyết của cả
             tập thể The Pet Vietnam, với sứ mệnh duy nhất là chăm chút cho mỗi
             bữa ăn của Boss nhà bạn. Bởi vì chúng tôi tin – hơn cả vật nuôi – là
