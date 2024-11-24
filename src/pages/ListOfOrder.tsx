@@ -44,7 +44,7 @@ export default function OrderList() {
       </Box>
 
       <Grid container spacing={2}>
-        {orders.map((order) => (
+        {orders.map((order, index) => (
           <Grid item xs={12} key={order.orderId}>
             <Paper
               onClick={() => navigate(`/admin_order_detail/${order.orderId}`)}
@@ -58,7 +58,7 @@ export default function OrderList() {
               }}
             >
               <Box>
-                <Typography variant="h6">Order#: {order.orderId}</Typography>
+                <Typography variant="h6">Order#: {index + 1}</Typography>
                 <Typography variant="body2" color="text.secondary">
                   Date: {formatDate(order.date)}
                 </Typography>
