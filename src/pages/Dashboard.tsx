@@ -59,7 +59,7 @@ const Dashboard = () => {
             sx={{ padding: "20px", backgroundColor: "#388e3c", color: "#fff" }}
           >
             <Typography variant="h6">Products Sold</Typography>
-            <Typography variant="h4">856</Typography>
+            <Typography variant="h4">30</Typography>
           </Paper>
         </Grid>
         <Grid item xs={12} md={4}>
@@ -67,7 +67,7 @@ const Dashboard = () => {
             sx={{ padding: "20px", backgroundColor: "#d32f2f", color: "#fff" }}
           >
             <Typography variant="h6">Revenue</Typography>
-            <Typography variant="h4">$12,345</Typography>
+            <Typography variant="h4">2.400.000đ</Typography>
           </Paper>
         </Grid>
       </Grid>
